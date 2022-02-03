@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">S01 Premiere Application</string>
     <string name="msgHello">bonjour de ma première application android</string>
+    <string name="btnTelephoner">Téléphoner</string>
+    <string name="btnSMS">SMS</string>
+    <string name="deviner_le_nombre">Bonjour %s ,Deviner le nombre</string>
+    <string name="btnVerifier">Vérifier</string>
+    <string name="btnJeu">Jeu</string>
+    <string name="msgWinner">Bravo</string>
 </resources>
