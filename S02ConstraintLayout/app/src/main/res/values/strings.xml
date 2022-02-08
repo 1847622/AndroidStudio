@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">S02 Constraint Layout</string>
+    <string name="oliix_nlevel_0">Oliix\nLevel 0</string>
+    <string name="training">Training</string>
 </resources>
