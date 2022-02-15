@@ -7,10 +7,14 @@
     <string name="training">Training</string>
     <string name="life">Life</string>
     <string name="revolution">Revolution</string>
-    <string name="level">Level %d</string>
     <string name="low_energy">Low Energy</string>
-    <string name="recharge">Recharge</string>
+    <string name="recharge" translatable="false">Recharge</string>
     <string name="warehouse">Warehouse</string>
     <string name="lblShort">Short</string>
     <string name="lorem" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
+
+    <string name="level">Level %d</string>
+    <string name="low_resources">Low Energy or Life</string>
+    <string name="msgRecharge">Recharge</string>
 </resources>

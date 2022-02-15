@@ -2,6 +2,7 @@ package com.example.s02constraintlayout.domain.models
 
 import kotlin.random.Random
 
+// Constructeur
 data class Pilot(var name: String, var life: Int, var cube: Int = 0) {
     private var _experience: Int = 0
     var shield: Int = 5
@@ -26,6 +27,7 @@ data class Pilot(var name: String, var life: Int, var cube: Int = 0) {
 
     fun recharge(){
         energy = 7
+        life = 10
     }
 
 }
