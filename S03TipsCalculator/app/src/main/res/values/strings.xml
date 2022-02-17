@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tips Calculator</string>
+    <string name="lblTitre">Calculateur de pourboires au Québec</string>
+</resources>
