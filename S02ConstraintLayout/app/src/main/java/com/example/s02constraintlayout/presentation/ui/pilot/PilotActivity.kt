@@ -18,7 +18,7 @@ class PilotActivity : AppCompatActivity() {
     //Permettre d'accéder aux composant graphiques (Button , txtView , ... ) de l'interface
     private lateinit var binding: ActivityPilotBinding
     private val viewModel : PilotViewModel by viewModels()
-   // private val _pilot = Pilot("Bee Zoon", 10)
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,63 +43,58 @@ class PilotActivity : AppCompatActivity() {
 
 
             binding.btnStart?.setOnClickListener {
-                /*  if (_pilot.canFly()) {
-                binding.btnStart.isEnabled = false
-                _pilot.fly(binding.sldRevolution.value.toInt(), binding.swtTraining.isChecked)
+                if(!viewModel.fly(binding.sldRevolution.value.toInt(), binding.swtTraining.isChecked)){
+                    Snackbar.make(binding.root,getString(R.string.low_resources), Snackbar.LENGTH_INDEFINITE)
+                        .setAction(getString(R.string.msgRecharge)){
+                            viewModel.recharge()
 
-                val layoutParams = binding.imvRocket.layoutParams as ConstraintLayout.LayoutParams
-                val startAngle = layoutParams.circleAngle
-                val endAngle = startAngle - 360
-                val animation = ValueAnimator.ofFloat(startAngle,endAngle)
-
-
-                animation.repeatCount = binding.sldRevolution.value.toInt() - 1
-                animation.duration = Random.nextLong(1500,3000)
-                animation.interpolator = LinearInterpolator()
-
-                animation.addUpdateListener {
-                    val animatedValue = it.animatedValue as Float
-                    val layoutParamsAnimation = binding.imvRocket.layoutParams as ConstraintLayout.LayoutParams
-                    layoutParamsAnimation.circleAngle = animatedValue
-                    binding.imvRocket.layoutParams = layoutParamsAnimation
-                    binding.imvRocket.rotation = animatedValue - 90
-
+                        }
+                        .show()
                 }
 
-                animation.doOnEnd {
-                    binding.btnStart?.isEnabled = true
-                    refreshUI()
-
-                }
-
-                animation.start()
-
-
-            } else {
-                Snackbar.make(binding.root,getString(R.string.low_resources), Snackbar.LENGTH_INDEFINITE)
-                    .setAction(getString(R.string.msgRecharge)){
-                        _pilot.recharge()
-                        refreshUI()
-                    }
-                    .show()
-            }
-*/
             }
 
-
         }
-
-        /*private fun refreshUI(){
-        with(binding) {
-            txvPilotName.text = _pilot.name
-            txvLevel.text = getString(R.string.level,_pilot.level)
-            txvLife.text = _pilot.life.toString()
-            txvShield.text = _pilot.shield.toString()
-            txvEnergy.text = _pilot.energy.toString()
-            txvCube.text = _pilot.cube.toString()
-
-        }
-    }*/
 
     }
 }
+
+
+
+/* Animation pour le bouton
+ if (_pilot.canFly()) {
+               binding.btnStart.isEnabled = false
+               _pilot.fly(binding.sldRevolution.value.toInt(), binding.swtTraining.isChecked)
+
+               val layoutParams = binding.imvRocket.layoutParams as ConstraintLayout.LayoutParams
+               val startAngle = layoutParams.circleAngle
+               val endAngle = startAngle - 360
+               val animation = ValueAnimator.ofFloat(startAngle,endAngle)
+
+
+               animation.repeatCount = binding.sldRevolution.value.toInt() - 1
+               animation.duration = Random.nextLong(1500,3000)
+               animation.interpolator = LinearInterpolator()
+
+               animation.addUpdateListener {
+                   val animatedValue = it.animatedValue as Float
+                   val layoutParamsAnimation = binding.imvRocket.layoutParams as ConstraintLayout.LayoutParams
+                   layoutParamsAnimation.circleAngle = animatedValue
+                   binding.imvRocket.layoutParams = layoutParamsAnimation
+                   binding.imvRocket.rotation = animatedValue - 90
+
+               }
+
+               animation.doOnEnd {
+                   binding.btnStart?.isEnabled = true
+                   refreshUI()
+
+               }
+
+               animation.start()
+
+
+           } else {
+
+           }
+*/
