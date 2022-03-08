@@ -15,8 +15,6 @@ class ContactRecyclerViewAdapter(var contacts : List<Contact>)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_contact,parent,false)
-
-
         return ViewHolder(view)
     }
 
@@ -27,16 +25,27 @@ class ContactRecyclerViewAdapter(var contacts : List<Contact>)
 
     override fun getItemCount(): Int = contacts.size
 
+
+
+
+
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = ItemContactBinding.bind(view)
 
         fun bind(contact: Contact) {
-            // Affichage d'un élément / d'un item de l'adapteur ( ici c'est une planète)
-            binding.txvName.text = contact.firstName + " " + contact.lastName
+            // Affichage d'un élément / d'un item de l'adapteur ( ici c'est un contact)
+            binding.txvName.text = contact.fullName
 
 
-            // val image = "planet${planet.image}"
-            //  binding.imvPlanet.loadFromResource(image)
+            when(contact.isOnline){
+                true -> {
+                    binding.imvCloud.setImageResource(R.drawable.ic_baseline_cloud_24)
+                }
+                false -> {
+                    binding.imvCloud.setImageResource(R.drawable.ic_baseline_cloud_off_24)
+                }
+            }
+
         }
     }
 

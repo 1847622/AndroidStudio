@@ -1,21 +1,40 @@
 package ca.qc.cstj.s05localdatasource.presentation.ui.main
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.*
+import ca.qc.cstj.s05localdatasource.data.AppDatabase
 import ca.qc.cstj.s05localdatasource.data.repositories.ContactRepository
 import ca.qc.cstj.s05localdatasource.domain.models.Contact
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel(application : Application) : AndroidViewModel(application) {
 
-    private val planetRepository = ContactRepository()
+    private val contactRepository = AppDatabase.getDatabase(application).ContactRepository()
 
-
-    private val _contact = MutableLiveData<List<Contact>>()
-    val planets : LiveData<List<Contact>> get() = _contact
+    private val _contacts = MutableLiveData<List<Contact>>()
+    val contacts : LiveData<List<Contact>> get() = _contacts
 
     init {
-        _contact.value = planetRepository.retrieveAll(7)
+        // collect == await
+        // await , prend le resultat , met le dans value
+        viewModelScope.launch {
+            contactRepository.retrieveAll().collect {
+                _contacts.value = it
+            }
+        }
+
     }
+
+    fun createContact(firstName: String, lastName: String, isOnline: Boolean) {
+        val contact = Contact(firstName,lastName,isOnline)
+        viewModelScope.launch {
+            contactRepository.create(contact)
+        }
+
+    }
+
+
+
 
 }

@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import ca.qc.cstj.s05localdatasource.R
+import ca.qc.cstj.s05localdatasource.core.notifyAllItemChanged
 import ca.qc.cstj.s05localdatasource.databinding.ActivityMainBinding
 import ca.qc.cstj.s05localdatasource.presentation.adapters.ContactRecyclerViewAdapter
 
@@ -23,14 +24,16 @@ class MainActivity : AppCompatActivity() {
 
         contactRecyclerViewAdapter = ContactRecyclerViewAdapter(listOf())
         binding.rcvContacts.adapter = contactRecyclerViewAdapter
-        binding.rcvContacts.adapter = contactRecyclerViewAdapter
+        binding.rcvContacts.layoutManager = LinearLayoutManager(this)
 
-        viewModel.planets.observe(this) {
+        viewModel.contacts.observe(this) {
             contactRecyclerViewAdapter.contacts = it
-            contactRecyclerViewAdapter.notifyDataSetChanged()
+            contactRecyclerViewAdapter.notifyAllItemChanged()
         }
 
-
+        binding.btnAdd.setOnClickListener{
+            viewModel.createContact("test", "Tester",true)
+        }
 
     }
 }

@@ -22,7 +22,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="Test Test"
-        android:textSize="28sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imvCloud"
         app:layout_constraintStart_toStartOf="parent"
