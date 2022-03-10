@@ -1,5 +1,7 @@
 package ca.qc.cstj.s05localdatasource.presentation.ui.main
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -36,4 +38,11 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    companion object {
+        fun newIntent(context: Context) : Intent {
+            return Intent(context,MainActivity::class.java)
+        }
+    }
+
 }
