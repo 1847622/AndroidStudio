@@ -17,6 +17,14 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // this dans une activity
+        viewModel.count.observe(viewLifecycleOwner){
+            binding.txtCount.text = it.toString()
+        }
+
+        binding.btnAdd.setOnClickListener {
+            viewModel.add()
+        }
 
     }
 

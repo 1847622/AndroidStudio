@@ -19,6 +19,8 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
         super.onViewCreated(view, savedInstanceState)
 
 
+
+
     }
 
 
