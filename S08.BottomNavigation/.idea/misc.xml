@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/1847622/Android/AndroidStudio/S08.BottomNavigation/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/1847622/Android/AndroidStudio/S08.BottomNavigation/app/src/main/res/layout/fragment_favorites.xml" value="0.36666666666666664" />
+        <entry key="..\:/1847622/Android/AndroidStudio/S08.BottomNavigation/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
+        <entry key="..\:/1847622/Android/AndroidStudio/S08.BottomNavigation/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />
         <entry key="..\:/1847622/AndroidStudio/S08.BottomNavigation/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.224" />
         <entry key="..\:/1847622/AndroidStudio/S08.BottomNavigation/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.224" />
         <entry key="..\:/1847622/AndroidStudio/S08.BottomNavigation/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.224" />
