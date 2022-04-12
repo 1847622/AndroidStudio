@@ -5,7 +5,10 @@ data class Meteo(
     val flag: String,
     val temperature: Double,
     val weather: String,
-    val dateWeather: Int,
+    val timestamp: Int,
+    val timeZone : Int,
     val latitude: Double,
     val longitude: Double
-)
+) {
+
+}

@@ -25,11 +25,13 @@ class MeteoDataSource {
                 is Result.Success -> {
                     val meteoDTO = json.decodeFromString<MeteoDTO>(result.value.content)
 
-                    return@withContext Meteo(meteoDTO.name,
+                    return@withContext Meteo(
+                        meteoDTO.name,
                         meteoDTO.sys.country,
                         meteoDTO.main.temp,
                         meteoDTO.weather[0].main,
                         meteoDTO.dt,
+                        meteoDTO.timezone,
                         meteoDTO.coord.lat,
                         meteoDTO.coord.lon)
                 }

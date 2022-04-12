@@ -160,7 +160,8 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txvSky"
-        tools:text="Date API" />
+        tools:text="Date API"
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/txvDatePhone"
@@ -172,7 +173,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txvDateAPI"
-        tools:text="Date Phone" />
+        tools:text="Date Phone"
+        android:textSize="30sp"/>
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/grpMeteo"
@@ -183,7 +185,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible">
+        tools:visibility="visible"
+        >
 
 
     </androidx.constraintlayout.widget.Group>
