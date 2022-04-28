@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         // Important pour les boutons de navigations
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_list_planet, R.id.nav_trader, R.id.nav_elements , R.id.nav_qr
+                R.id.nav_list_planet, R.id.nav_trader, R.id.nav_elements , R.id.nav_qr , R.id.nav_fun
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
